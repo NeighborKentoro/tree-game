@@ -45,9 +45,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alienPrefab: {fileID: 6825708888859215819, guid: 431188b5c8e42b640828506063e9b9a8, type: 3}
-  xSpawnSpacing: 1.5
-  ySpawnSpacing: 1.5
-  xSpawnOffset: -3
+  xSpawnSpacing: 10
+  ySpawnSpacing: 10
+  xSpawnOffset: -40
   ySpawnOffset: 3
-  enemiesPerRow: 5
+  enemiesPerRow: 9
   enemiesPerColumn: 5
