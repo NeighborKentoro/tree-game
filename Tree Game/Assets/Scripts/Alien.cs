@@ -11,6 +11,7 @@ public class Alien : MonoBehaviour {
     private int xDirection;
     private int xStepsMoved;
     private int frameCount;
+    private int row = 0;
 
     void Start() {
         this.frameCount = 1;
@@ -19,7 +20,7 @@ public class Alien : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if (this.frameCount >= this.movementFramesInterval) {
+        if (this.frameCount >= (this.movementFramesInterval + this.row)) {
             float yStep = 0f;
             float xStep = 1f * this.xDirection;
             
@@ -38,5 +39,9 @@ public class Alien : MonoBehaviour {
             this.frameCount = 1;
         }
         this.frameCount++;
+    }
+
+    public void SetRow(int row) {
+        this.row = row;
     }
 }

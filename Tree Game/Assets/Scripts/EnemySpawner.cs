@@ -17,7 +17,8 @@ public class EnemySpawner : MonoBehaviour {
             Vector3 rowPosition = new Vector3((this.transform.position.x + (xSpawnSpacing * iRow)) + xSpawnOffset, this.transform.position.y, 0);
             for (int iColumn = 0; iColumn < enemiesPerColumn; iColumn++) {
                 Vector3 columnPosition = new Vector3(rowPosition.x, (rowPosition.y + (ySpawnSpacing * iColumn)) + ySpawnOffset, 0);
-                GameObject.Instantiate(alienPrefab, columnPosition, this.transform.rotation);
+                GameObject alien = GameObject.Instantiate(alienPrefab, columnPosition, this.transform.rotation);
+                alien.GetComponent<Alien>().SetRow(iRow);
             }
         }
     }
