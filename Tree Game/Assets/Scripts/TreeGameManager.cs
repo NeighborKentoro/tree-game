@@ -6,19 +6,26 @@ public class TreeGameManager : MonoBehaviour {
 
     private int enemiesKilled;
     private int score;
+    private int scoreMultiplier;
     private float timeElapsed = 0f;
     private string root = "all";
     private GameObject[] keys;
     public bool selectRootMode = true;
+    public float multiplierTime;
 
     void Start() {
         this.enemiesKilled = 0;
         this.score = 0;
+        this.scoreMultiplier = 1;
         keys = getAllKeys();
     }
 
     void Update() {
-        // this.timeElapsed += Time.deltaTime;
+        this.timeElapsed += Time.deltaTime;
+        if (this.timeElapsed >= this.multiplierTime && this.scoreMultiplier > 1) {
+            this.scoreMultiplier = 1;
+            EventManager.ScoreMultiplier(this.scoreMultiplier);
+        }
     }
 
     void OnEnable() {
@@ -30,9 +37,12 @@ public class TreeGameManager : MonoBehaviour {
 	}
 
     private void EnemyDied() {
-        this.score++;
         this.enemiesKilled++;
+        this.scoreMultiplier++;
+        this.score += 100 * this.scoreMultiplier;
+        this.timeElapsed = 0f;
         EventManager.Score(this.score);
+        EventManager.ScoreMultiplier(this.scoreMultiplier);
     }
 
     private GameObject[] getAllKeys()

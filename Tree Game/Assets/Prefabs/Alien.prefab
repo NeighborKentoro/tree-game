@@ -100,8 +100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementFramesInterval: 360
-  xLeftBounds: -45
-  xRightBounds: 45
+  xLeftBounds: -46
+  xRightBounds: 46
   deadEnemiesFrameDrop: 20
   maxStepSpeed: 10
 --- !u!61 &-8138255665359557088
