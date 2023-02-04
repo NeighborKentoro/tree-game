@@ -6,6 +6,8 @@ public class TreeGameManager : MonoBehaviour {
 
     private int enemiesKilled;
     private int score;
+    private float timeElapsed = 0f;
+    public float timeToDie = 0f;
 
     // Start is called before the first frame update
     void Start() {
@@ -15,7 +17,11 @@ public class TreeGameManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        
+        this.timeElapsed += Time.deltaTime;
+        if (this.timeElapsed >= timeToDie) {
+            this.timeElapsed = 0f;
+            EventManager.KillEnemy(Random.Range(1, 9), Random.Range(1, 5));
+        }
     }
 
     void OnEnable() {
