@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 3520822229085298675}
   - component: {fileID: 8262412339786153541}
-  - component: {fileID: 2641161354948140701}
   - component: {fileID: -7968473690325274294}
   - component: {fileID: -633081223649650954}
+  - component: {fileID: 343878308579666884}
   m_Layer: 0
-  m_Name: Projectile
-  m_TagString: Projectile
+  m_Name: ProjectileEnemy
+  m_TagString: AlienProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4490271296222550685}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.1648, y: -0.238, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 1, y: 1, z: 0}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 9e1e69d53e71ce747a4bcea64ada344c, type: 3}
-  m_Color: {r: 0, g: 0.44000244, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0.13759041, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -87,20 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2641161354948140701
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4490271296222550685}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3bf752bbc15d5a14e992b2895f3af0dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 35
-  timeToDie: 10
 --- !u!61 &-7968473690325274294
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -148,3 +134,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &343878308579666884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4490271296222550685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc5c0ec8f7948cf44a1af4a9c23ced86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 7
+  timeToDie: 5

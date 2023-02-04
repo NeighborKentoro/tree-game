@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class Alien : MonoBehaviour {
 
@@ -13,13 +14,19 @@ public class Alien : MonoBehaviour {
     private int row = 0;
     private int column = 0;
     private float xStart;
+    [SerializeField]
+    public GameObject projectile;
+    private float shootCooldown = 5f;
+
 
     void OnEnable() {
         EventManager.enemyDiedEvent += EnemyDied;
+        EventManager.enemyShootEvent += EnemyShoot;
 	}
 
 	void OnDisable() {
         EventManager.enemyDiedEvent -= EnemyDied;
+        EventManager.enemyShootEvent -= EnemyShoot;
 	}
 
     void Start() {
@@ -49,6 +56,7 @@ public class Alien : MonoBehaviour {
             this.frameCount = 1;
         }
         this.frameCount++;
+            
     }
 
     public void SetGrid(int row, int column) {
@@ -64,10 +72,23 @@ public class Alien : MonoBehaviour {
         }
     }
 
+    private void EnemyShoot(int row, int column)
+    {
+        if (this.row == row && this.column == column)
+        {
+            Debug.Log("enemy shot");
+            Instantiate(projectile);
+        }
+        
+    }
+
     void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.tag == "Projectile") {
             EventManager.EnemyDied();
             Destroy(this.gameObject, 0f);
         }
+
+        if (collision.gameObject.tag == "AlienProjectile")
+            Physics2D.IgnoreCollision(collision.gameObject.GetComponent<Collider2D>(), GetComponent<Collider2D>());
     } 
 }

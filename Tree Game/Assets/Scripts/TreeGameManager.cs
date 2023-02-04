@@ -10,6 +10,7 @@ public class TreeGameManager : MonoBehaviour {
     private string root = "all";
     private GameObject[] keys;
     public bool selectRootMode = true;
+    public float timeToShoot = 0f;
 
     void Start() {
         this.enemiesKilled = 0;
@@ -18,7 +19,12 @@ public class TreeGameManager : MonoBehaviour {
     }
 
     void Update() {
-        // this.timeElapsed += Time.deltaTime;
+        this.timeElapsed += Time.deltaTime;
+        if (this.timeElapsed >= timeToShoot)
+        {
+            this.timeElapsed = 0f;
+            EventManager.EnemyShoot(Random.Range(1, 9), Random.Range(1, 5));
+        }
     }
 
     void OnEnable() {
