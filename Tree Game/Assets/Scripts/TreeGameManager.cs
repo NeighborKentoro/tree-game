@@ -29,6 +29,6 @@ public class TreeGameManager : MonoBehaviour {
     private void EnemyDied() {
         this.score++;
         this.enemiesKilled++;
-        //INCREASE TEMPO BASED ON ENEMIES KILLED
+        EventManager.Score(this.score);
     }
 }
