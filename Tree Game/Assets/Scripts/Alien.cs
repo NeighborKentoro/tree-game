@@ -16,12 +16,10 @@ public class Alien : MonoBehaviour {
 
     void OnEnable() {
         EventManager.enemyDiedEvent += EnemyDied;
-        EventManager.killEnemyEvent += GetMaid;
 	}
 
 	void OnDisable() {
         EventManager.enemyDiedEvent -= EnemyDied;
-        EventManager.killEnemyEvent -= GetMaid;
 	}
 
     void Start() {
@@ -66,17 +64,10 @@ public class Alien : MonoBehaviour {
         }
     }
 
-    private void GetMaid(int row, int column) {
-        if (this.row == row && this.column == column) {
-            EventManager.EnemyDied();
-            Destroy(this.gameObject, 0.5f);
-        }
-    }
-
     void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.tag == "Projectile") {
             EventManager.EnemyDied();
-            Destroy(this.gameObject, 0.5f);
+            Destroy(this.gameObject, 0f);
         }
     } 
 }

@@ -21,4 +21,10 @@ public class Projectile : MonoBehaviour
         transform.Translate(Vector2.up * speed * Time.deltaTime);
         Object.Destroy(gameObject, timeToDie);
     }
+
+    void OnCollisionEnter2D(Collision2D collision) {
+        if (collision.gameObject.tag != "Projectile") {
+            Destroy(this.gameObject, 0f);
+        }
+    } 
 }
