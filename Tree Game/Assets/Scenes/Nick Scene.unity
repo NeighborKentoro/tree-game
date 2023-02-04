@@ -262,5 +262,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Keyboard
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1801265259782211693, guid: b040222c74b9a8b4495502ce934cea89, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b040222c74b9a8b4495502ce934cea89, type: 3}

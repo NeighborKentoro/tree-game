@@ -6,6 +6,8 @@ public class Projectile : MonoBehaviour
 {
     [SerializeField]
     public float speed;
+    [SerializeField]
+    public float timeToDie = 5f;
 
     // Start is called before the first frame update
     void Start()
@@ -17,5 +19,6 @@ public class Projectile : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector2.up * speed * Time.deltaTime);
+        Object.Destroy(gameObject, timeToDie);
     }
 }
