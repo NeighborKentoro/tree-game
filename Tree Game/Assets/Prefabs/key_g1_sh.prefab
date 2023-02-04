@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4678911638497061227}
   - component: {fileID: 8463165748487906155}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: ShootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,9 +96,9 @@ GameObject:
   - component: {fileID: 189089502903259412}
   - component: {fileID: 4057899224115123072}
   - component: {fileID: 3229362085409706074}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: key_g1_sh
-  m_TagString: Untagged
+  m_TagString: g#
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

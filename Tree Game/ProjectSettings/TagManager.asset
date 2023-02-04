@@ -5,6 +5,19 @@ TagManager:
   serializedVersion: 2
   tags:
   - Projectile
+  - a
+  - b
+  - c
+  - d
+  - e
+  - f
+  - g
+  - a#
+  - c#
+  - d#
+  - f#
+  - g#
+  - Keyboard
   layers:
   - Default
   - TransparentFX
@@ -20,7 +33,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Keys
   - 
   - 
   - 
