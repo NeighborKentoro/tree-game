@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Alien : MonoBehaviour {
@@ -7,11 +5,20 @@ public class Alien : MonoBehaviour {
     public int movementFramesInterval;
     public int xLeftBounds;
     public int xRightBounds;
+    public int deadEnemiesFrameDrop = 20;
 
     private int xDirection;
     private int xStepsMoved;
     private int frameCount;
     private int row = 0;
+
+    void OnEnable() {
+        EventManager.enemyDiedEvent += EnemyDied;
+	}
+
+	void OnDisable() {
+        EventManager.enemyDiedEvent -= EnemyDied;
+	}
 
     void Start() {
         this.frameCount = 1;
@@ -44,4 +51,15 @@ public class Alien : MonoBehaviour {
     public void SetRow(int row) {
         this.row = row;
     }
+
+    private void EnemyDied() {
+        this.movementFramesInterval -= deadEnemiesFrameDrop;
+    }
+
+    void OnCollisionEnter2D(Collision2D collision) {
+        if (collision.gameObject.tag == "Projectile") {
+            EventManager.EnemyDied();
+            Destroy(this, 0f);
+        }
+    } 
 }

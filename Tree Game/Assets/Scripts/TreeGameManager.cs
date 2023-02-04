@@ -20,7 +20,6 @@ public class TreeGameManager : MonoBehaviour {
 
     void OnEnable() {
         EventManager.enemyDiedEvent += EnemyDied;
-
 	}
 
 	void OnDisable() {
