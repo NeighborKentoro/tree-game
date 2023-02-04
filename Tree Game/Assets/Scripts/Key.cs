@@ -10,10 +10,12 @@ public class Key : MonoBehaviour
     public GameObject shootPoint;
     private bool activated = true;
     private Keyboard keyboard;
+    private TreeGameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = GameObject.FindObjectOfType<TreeGameManager>().GetComponent<TreeGameManager>();
         keyboard = GameObject.FindGameObjectWithTag("Keyboard").GetComponent<Keyboard>();
     }
 
@@ -30,7 +32,7 @@ public class Key : MonoBehaviour
                 {
                     Debug.Log("Clicked: " + hit.collider.gameObject.tag);
                     // if in select root mode, this key will be set as root
-                    if (GameObject.FindGameObjectWithTag("Keyboard").GetComponent<Keyboard>().selectRootMode == true)
+                    if (gameManager.selectRootMode)
                     {
                         Debug.Log("SELECTING ROOT");
                         updateRoot(hit.collider.gameObject.tag);

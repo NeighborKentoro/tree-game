@@ -8,11 +8,15 @@ public class TreeGameManager : MonoBehaviour {
     private int score;
     private float timeElapsed = 0f;
     public float timeToDie = 0f;
+    private string root = "all";
+    private GameObject[] keys;
+    public bool selectRootMode = true;
 
     // Start is called before the first frame update
     void Start() {
         this.enemiesKilled = 0;
         this.score = 0;
+        keys = getAllKeys();
     }
 
     // Update is called once per frame
@@ -37,4 +41,100 @@ public class TreeGameManager : MonoBehaviour {
         this.enemiesKilled++;
         EventManager.Score(this.score);
     }
+
+    private GameObject[] getAllKeys()
+    {
+        List<GameObject> keys = new List<GameObject>();
+        foreach (GameObject go in GameObject.FindGameObjectsWithTag("a"))
+        {
+            keys.Add(go);
+        }
+        foreach (GameObject go in GameObject.FindGameObjectsWithTag("a#"))
+        {
+            keys.Add(go);
+        }
+        foreach (GameObject go in GameObject.FindGameObjectsWithTag("b"))
+        {
+            keys.Add(go);
+        }
+        foreach (GameObject go in GameObject.FindGameObjectsWithTag("c"))
+        {
+            keys.Add(go);
+        }
+        foreach (GameObject go in GameObject.FindGameObjectsWithTag("c#"))
+        {
+            keys.Add(go);
+        }
+        foreach (GameObject go in GameObject.FindGameObjectsWithTag("d"))
+        {
+            keys.Add(go);
+        }
+        foreach (GameObject go in GameObject.FindGameObjectsWithTag("d#"))
+        {
+            keys.Add(go);
+        }
+        foreach (GameObject go in GameObject.FindGameObjectsWithTag("e"))
+        {
+            keys.Add(go);
+        }
+        foreach (GameObject go in GameObject.FindGameObjectsWithTag("f"))
+        {
+            keys.Add(go);
+        }
+        foreach (GameObject go in GameObject.FindGameObjectsWithTag("f#"))
+        {
+            keys.Add(go);
+        }
+        foreach (GameObject go in GameObject.FindGameObjectsWithTag("g"))
+        {
+            keys.Add(go);
+        }
+        foreach (GameObject go in GameObject.FindGameObjectsWithTag("g#"))
+        {
+            keys.Add(go);
+        }
+
+
+        return keys.ToArray();
+    }
+
+    public GameObject[] getKeys()
+    {
+        return keys;
+    }
+
+    public GameObject[] getKeysByRoot(string r)
+    { 
+        switch (r)
+        {
+            case "a":
+                return GameObject.FindGameObjectsWithTag("a");
+            case "a#":
+                return GameObject.FindGameObjectsWithTag("a#");
+            case "b":
+                return GameObject.FindGameObjectsWithTag("b");
+            case "c":
+                return GameObject.FindGameObjectsWithTag("c");
+            case "c#":
+                return GameObject.FindGameObjectsWithTag("c#");
+            case "d":
+                return GameObject.FindGameObjectsWithTag("d");
+            case "d#":
+                return GameObject.FindGameObjectsWithTag("d#");
+            case "e":
+                return GameObject.FindGameObjectsWithTag("e");
+            case "f":
+                return GameObject.FindGameObjectsWithTag("f");
+            case "f#":
+                return GameObject.FindGameObjectsWithTag("f#");
+            case "g":
+                return GameObject.FindGameObjectsWithTag("g");
+            case "g#":
+                return GameObject.FindGameObjectsWithTag("g#");
+            default:
+                return getAllKeys();
+        }
+    }
+
+
 }
