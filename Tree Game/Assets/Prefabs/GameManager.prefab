@@ -44,4 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dbf15d3921f6ea428b3c1d116a5d675, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToDie: 2
+  selectRootMode: 1
+  multiplierTime: 8
+  timeToShoot: 15

@@ -572,6 +572,10 @@ PrefabInstance:
       value: GameManager
       objectReference: {fileID: 0}
     - target: {fileID: 8158058521994416105, guid: 345e9473d1a4cd64c8ae7d7fa6f5805b, type: 3}
+      propertyPath: timeToShoot
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8158058521994416105, guid: 345e9473d1a4cd64c8ae7d7fa6f5805b, type: 3}
       propertyPath: multiplierTime
       value: 5
       objectReference: {fileID: 0}

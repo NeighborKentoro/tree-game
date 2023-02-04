@@ -18,14 +18,13 @@ public class AudioManager : MonoBehaviour {
         // this.songAudioSource.Play();
         // this.drumAudioSource.Play();
         this.tempo = 80;
-        this.secondsPerBeat = this.tempo / 60;
+        this.secondsPerBeat = 60f / this.tempo;
         this.timeElapsed = 0f;
     }
 
     void Update() {
         this.timeElapsed += Time.deltaTime;
         if (this.timeElapsed >= this.secondsPerBeat) {
-            Debug.Log("BEAT");
             this.timeElapsed = 0f;
         }
     }
@@ -40,6 +39,6 @@ public class AudioManager : MonoBehaviour {
 
     void IncreaseTempo() {
         this.tempo += 10;
-        this.secondsPerBeat = this.tempo / 60;
+        this.secondsPerBeat = 60f / this.tempo;
     }
 }

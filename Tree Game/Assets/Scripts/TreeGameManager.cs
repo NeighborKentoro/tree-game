@@ -14,6 +14,10 @@ public class TreeGameManager : MonoBehaviour {
     public float multiplierTime;
     public float timeToShoot = 0f;
 
+    void Awake() {
+        keys = getAllKeys();
+    }
+
     void Start() {
         this.enemiesKilled = 0;
         this.score = 0;
