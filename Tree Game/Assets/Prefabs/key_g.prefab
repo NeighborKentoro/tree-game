@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5553620247206215288}
   - component: {fileID: 1811074590036593155}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: key_d_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,9 +96,9 @@ GameObject:
   - component: {fileID: 7902129388729649507}
   - component: {fileID: 2976959451454681570}
   - component: {fileID: 3134277014546670298}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: key_g
-  m_TagString: Untagged
+  m_TagString: g
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -197,7 +197,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5789640064456697649}
   - component: {fileID: 1295795289581098126}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: key_d_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -281,7 +281,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4015536933223827318}
   - component: {fileID: 422045337473015055}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: ShootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
