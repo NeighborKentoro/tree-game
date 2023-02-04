@@ -7,6 +7,9 @@ public class EventManager {
     public static event ScoreAction scoreEvent;
     public static event ScoreAction scoreMultiplierEvent;
 
+    public delegate void EnemyShootAction(int row, int column);
+    public static event EnemyShootAction enemyShootEvent;
+
     public static void EnemyDied() {
         if (enemyDiedEvent != null) {
 		    enemyDiedEvent();
@@ -22,6 +25,14 @@ public class EventManager {
     public static void ScoreMultiplier(int scoreMultiplier) {
         if (scoreMultiplierEvent != null) {
             scoreMultiplierEvent(scoreMultiplier);
+        }
+    }
+
+    public static void EnemyShoot(int row, int column)
+    {
+        if (enemyShootEvent != null)
+        {
+            enemyShootEvent(row, column);
         }
     }
 

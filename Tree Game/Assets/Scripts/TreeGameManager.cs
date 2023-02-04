@@ -12,6 +12,7 @@ public class TreeGameManager : MonoBehaviour {
     private GameObject[] keys;
     public bool selectRootMode = true;
     public float multiplierTime;
+    public float timeToShoot = 0f;
 
     void Start() {
         this.enemiesKilled = 0;
@@ -25,6 +26,12 @@ public class TreeGameManager : MonoBehaviour {
         if (this.timeElapsed >= this.multiplierTime && this.scoreMultiplier > 1) {
             this.scoreMultiplier = 1;
             EventManager.ScoreMultiplier(this.scoreMultiplier);
+        }
+
+        if (this.timeElapsed >= timeToShoot)
+        {
+            this.timeElapsed = 0f;
+            EventManager.EnemyShoot(Random.Range(1, 9), Random.Range(1, 5));
         }
     }
 

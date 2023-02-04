@@ -18,6 +18,8 @@ TagManager:
   - f#
   - g#
   - Keyboard
+  - Alien
+  - AlienProjectile
   layers:
   - Default
   - TransparentFX
