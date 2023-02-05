@@ -57,9 +57,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1eb579b8f6a33cb46adad7d4d450ede2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  songAudioSource: {fileID: 0}
+  audioSources:
+  - {fileID: -9146691788049037325}
+  - {fileID: 7890288830783536096}
+  - {fileID: -4423201917994278125}
+  - {fileID: 1965460334954710517}
+  - {fileID: 8228160644919253645}
+  - {fileID: -8274378200272460938}
+  - {fileID: 4193836217902717377}
+  - {fileID: -4002507418308070678}
+  - {fileID: 3859322745020542689}
+  - {fileID: 4632034748741008689}
+  - {fileID: -2024359731572582318}
+  - {fileID: -3725227526061233466}
   drumAudioSource: {fileID: -7477514833030777445}
-  drumLoops: []
 --- !u!82 &-7477514833030777445
 AudioSource:
   m_ObjectHideFlags: 0
@@ -171,7 +182,7 @@ AudioSource:
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
-  Mute: 0
+  Mute: 1
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -267,7 +278,7 @@ AudioSource:
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
-  Mute: 0
+  Mute: 1
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -363,7 +374,7 @@ AudioSource:
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
-  Mute: 0
+  Mute: 1
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -459,7 +470,7 @@ AudioSource:
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
-  Mute: 0
+  Mute: 1
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -555,7 +566,7 @@ AudioSource:
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
-  Mute: 0
+  Mute: 1
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -651,7 +662,7 @@ AudioSource:
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
-  Mute: 0
+  Mute: 1
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -747,7 +758,7 @@ AudioSource:
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
-  Mute: 0
+  Mute: 1
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -843,7 +854,7 @@ AudioSource:
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
-  Mute: 0
+  Mute: 1
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -939,7 +950,7 @@ AudioSource:
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
-  Mute: 0
+  Mute: 1
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -1035,7 +1046,7 @@ AudioSource:
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
-  Mute: 0
+  Mute: 1
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -1131,7 +1142,7 @@ AudioSource:
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
-  Mute: 0
+  Mute: 1
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -1227,7 +1238,7 @@ AudioSource:
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
-  Mute: 0
+  Mute: 1
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128

@@ -49,5 +49,5 @@ MonoBehaviour:
   ySpawnSpacing: 10
   xSpawnOffset: -120
   ySpawnOffset: -5
-  enemiesPerRow: 1
-  enemiesPerColumn: 1
+  enemiesPerRow: 21
+  enemiesPerColumn: 3
