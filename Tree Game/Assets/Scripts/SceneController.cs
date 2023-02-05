@@ -31,8 +31,15 @@ public class SceneController : MonoBehaviour
 
     public void quitGame()
     {
-        Application.Quit();
-        //UnityEditor.EditorApplication.isPlaying = false;
+        #if UNITY_STANDALONE
+            //Quit the application
+            Application.Quit();
+        #endif
+ 
+        #if UNITY_EDITOR
+            //Stop playing the scene
+            UnityEditor.EditorApplication.isPlaying = false;
+        #endif
     }
 
     public void showRules()
