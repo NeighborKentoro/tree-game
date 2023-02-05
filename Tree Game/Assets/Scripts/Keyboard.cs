@@ -9,7 +9,6 @@ public class Keyboard : MonoBehaviour {
     void Start() {
         gameManager = GameObject.FindObjectOfType<TreeGameManager>().GetComponent<TreeGameManager>();
         deactivateAllKeys();
-        //activateAllKeys();
     }
 
     void Update() {
@@ -41,7 +40,6 @@ public class Keyboard : MonoBehaviour {
 
         if (!gameManager.started)
             gameManager.startGame();
-        //gameManager.selectRootMode = false;
     }
 
     public void deactivateAllKeys()
