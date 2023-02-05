@@ -16,12 +16,16 @@ public class TreeGameManager : MonoBehaviour {
     public float multiplierTime;
     public float timeToShoot = 0f;
     public bool started = false;
+    public bool gameOver;
+    public int maxAliens;
 
     void Awake() {
         keys = getAllKeys();
     }
 
     void Start() {
+        this.gameOver = false;
+        this.maxAliens = 0;
         this.enemiesKilled = 0;
         this.score = 0;
         this.scoreMultiplier = 0;
@@ -59,6 +63,10 @@ public class TreeGameManager : MonoBehaviour {
         this.multiplierTimeElapsed = 0f;
         EventManager.Score(this.score);
         EventManager.ScoreMultiplier(this.scoreMultiplier);
+        if (enemiesKilled >= maxAliens)
+        {
+            youDaMan();
+        }
     }
 
     private GameObject[] getAllKeys()
@@ -157,21 +165,51 @@ public class TreeGameManager : MonoBehaviour {
 
     public void startGame()
     {
-        started = true;
-        GameObject.FindObjectOfType<EnemySpawner>().GetComponent<EnemySpawner>().spawnAliens();
-        GameObject.FindGameObjectWithTag("Menu").SetActive(false);
+        if (!gameOver)
+        {
+            started = true;
+            GameObject.FindObjectOfType<EnemySpawner>().GetComponent<EnemySpawner>().spawnAliens();
+            GameObject.FindGameObjectWithTag("Menu").SetActive(false);
+        }
+        
     }
 
-    public void endGame()
+    // win
+    public void youDaMan()
     {
-
+        GameObject.FindGameObjectWithTag("EndGame").GetComponent<TMP_Text>().text = "Woop woop. You win.\n\nPress any key to reset.";
+        started = false;
+        this.gameOver = true;
+        GameObject.FindGameObjectWithTag("Keyboard").GetComponent<Keyboard>().activateAllKeys();
     }
+
 
     // lose
     public void youSuck()
     {
-        GameObject.FindGameObjectWithTag("EndGame").GetComponent<TMP_Text>().text = "Womp womp. Game over.";
+        GameObject.FindGameObjectWithTag("EndGame").GetComponent<TMP_Text>().text = "Womp womp. Game over.\n\nPress any key to reset.";
         started = false;
+        this.gameOver = true;
+        // destroy all aliens
+        GameObject[] aliens = GameObject.FindGameObjectsWithTag("Alien");
+        foreach(GameObject a in aliens)
+        {
+            Destroy(a, 0f);
+        }
+        // destroy all projectiles
+        GameObject[] alienProjectiles = GameObject.FindGameObjectsWithTag("AlienProjectile");
+        foreach(GameObject a in alienProjectiles)
+        {
+            Destroy(a, 0f);
+        }
+
+        GameObject[] projectiles = GameObject.FindGameObjectsWithTag("Projectile");
+        foreach(GameObject p in projectiles)
+        {
+            Destroy(p, 0f);
+        }
+
+        GameObject.FindGameObjectWithTag("Keyboard").GetComponent<Keyboard>().deactivateAllKeys();
     }
 
 

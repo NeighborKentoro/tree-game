@@ -55,7 +55,7 @@ public class Keyboard : MonoBehaviour {
         }
     }
 
-    private void activateAllKeys()
+    public void activateAllKeys()
     {
         GameObject[] keys = gameManager.getKeys();
         foreach (GameObject key in keys)
