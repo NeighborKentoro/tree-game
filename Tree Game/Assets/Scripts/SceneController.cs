@@ -1,10 +1,13 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class SceneController : MonoBehaviour
 {
     [SerializeField]
     public string startScene = "Menu";
+    [SerializeField]
+    public GameObject rules;
 
     // Start is called before the first frame update
     void Start()
@@ -26,5 +29,23 @@ public class SceneController : MonoBehaviour
     {
         Application.Quit();
         UnityEditor.EditorApplication.isPlaying = false;
+    }
+
+    public void showRules()
+    {
+        GameObject.FindGameObjectWithTag("Menu").SetActive(false);
+        rules.SetActive(true);
+    }
+
+    public void showMenu()
+    {
+        rules.SetActive(false);
+        GameObject.FindGameObjectWithTag("Menu").SetActive(true);
+    }
+
+    public void hideMenuAndRules()
+    {
+        GameObject.FindGameObjectWithTag("Menu").SetActive(false);
+        rules.SetActive(false);
     }
 }

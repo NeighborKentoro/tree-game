@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Keyboard : MonoBehaviour {
 
@@ -8,15 +9,17 @@ public class Keyboard : MonoBehaviour {
     [SerializeField]
     public int maxHealth = 100;
     private int currentHealth;
+    private GameObject healthField;
 
     void Start() {
+        healthField = GameObject.FindGameObjectWithTag("Health");
+        healthField.GetComponent<TMP_Text>().text = maxHealth.ToString();
         currentHealth = maxHealth;
         gameManager = GameObject.FindObjectOfType<TreeGameManager>().GetComponent<TreeGameManager>();
         deactivateAllKeys();
     }
 
     void Update() {
-
     }
 
     void OnEnable()
@@ -74,7 +77,11 @@ public class Keyboard : MonoBehaviour {
         {
             currentHealth--;
         }
-        
+
+        healthField.GetComponent<TMP_Text>().text = currentHealth.ToString();
+
+
+
         Debug.Log("Hit by " + hitBy + " " + currentHealth);
         if (currentHealth < 0)
         {
