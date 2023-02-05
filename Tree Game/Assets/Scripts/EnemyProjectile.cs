@@ -27,17 +27,17 @@ public class EnemyProjectile : MonoBehaviour
         if (collision.gameObject.tag != "AlienProjectile" && collision.gameObject.tag != "Alien")
         {
             Destroy(this.gameObject, 0f);
-        }
-        if (collision.gameObject.tag == "Projectile")
+        } else if (collision.gameObject.tag == "Projectile")
         {
-            Debug.Log("Destroy proj");
             Destroy(this.gameObject, 0f);
             Destroy(collision.gameObject, 0f);
-        }
-        if (collision.gameObject.tag == "Alien")
+        } else if (collision.gameObject.tag == "Alien")
         {
             Physics2D.IgnoreCollision(collision.gameObject.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+        } else if (collision.gameObject.tag == "Keyboard") {
+            EventManager.KeyboardHit();
         }
+
             
     }
 }
