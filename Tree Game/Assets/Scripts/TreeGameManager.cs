@@ -161,5 +161,17 @@ public class TreeGameManager : MonoBehaviour {
         GameObject.FindGameObjectWithTag("Menu").SetActive(false);
     }
 
+    public void endGame()
+    {
+
+    }
+
+    // lose
+    public void youSuck()
+    {
+        GameObject.FindGameObjectWithTag("EndGame").gameObject.SetActive(true);
+        started = false;
+    }
+
 
 }
