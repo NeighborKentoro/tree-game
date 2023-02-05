@@ -21,6 +21,7 @@ TagManager:
   - Alien
   - AlienProjectile
   - KeyColor
+  - Menu
   layers:
   - Default
   - TransparentFX

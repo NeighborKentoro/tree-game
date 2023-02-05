@@ -8,11 +8,17 @@ public class Keyboard : MonoBehaviour {
 
     void Start() {
         gameManager = GameObject.FindObjectOfType<TreeGameManager>().GetComponent<TreeGameManager>();
+        deactivateAllKeys();
         //activateAllKeys();
     }
 
     void Update() {
 
+    }
+
+    void OnEnable()
+    {
+        EventManager.keyboardHitEvent += KeyboardHit;
     }
 
     public void setRoot(string newRoot)
@@ -33,10 +39,12 @@ public class Keyboard : MonoBehaviour {
 
         }
 
+        if (!gameManager.started)
+            gameManager.startGame();
         //gameManager.selectRootMode = false;
     }
 
-    private void deactivateAllKeys()
+    public void deactivateAllKeys()
     {
         GameObject[] keys = gameManager.getKeys();
         foreach(GameObject key in keys)
@@ -52,5 +60,10 @@ public class Keyboard : MonoBehaviour {
         {
             key.GetComponent<Key>().activate();
         }
+    }
+
+    void KeyboardHit()
+    {
+        
     }
 }
