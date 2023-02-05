@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectRootMode: 1
-  multiplierTime: 2
+  multiplierTime: 1
   timeToShoot: 15
   started: 0
   gameOver: 0

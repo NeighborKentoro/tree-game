@@ -9,7 +9,7 @@ public class TreeGameManager : MonoBehaviour {
     private int score;
     private int scoreMultiplier;
     private float timeElapsed = 0f;
-    private float multiplierTimeElapsed = 0f;
+    private float multiplierTimeElapsed;
     private string root = "all";
     private GameObject[] keys;
     public bool selectRootMode = true;
@@ -37,8 +37,10 @@ public class TreeGameManager : MonoBehaviour {
     void Update() {
         this.multiplierTimeElapsed += Time.deltaTime;
         this.timeElapsed += Time.deltaTime;
+        Debug.LogWarning(this.multiplierTime);
         if (this.multiplierTimeElapsed >= this.multiplierTime && this.scoreMultiplier > 1) {
             this.scoreMultiplier = 1;
+            Debug.LogWarning("NO MULTIPLIER");
             EventManager.ScoreMultiplier(this.scoreMultiplier);
         }
 

@@ -31,6 +31,7 @@ public class EnemyProjectile : MonoBehaviour
             Physics2D.IgnoreCollision(collision.gameObject.GetComponent<Collider2D>(), GetComponent<Collider2D>());
         } else if ("a#bc#d#ef#g#".Contains(collision.gameObject.tag)) {
             EventManager.KeyboardHit(this.tag);
+            Destroy(this.gameObject, 0f);
         }
 
             
