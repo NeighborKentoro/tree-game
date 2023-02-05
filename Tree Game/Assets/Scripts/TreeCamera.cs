@@ -4,6 +4,7 @@ public class TreeCamera : MonoBehaviour {
 
     public float seizureTime;
     private float elaspsedSeizureTime;
+    private Camera treeCamera;
 
     void OnEnable() {
         EventManager.keyboardHitEvent += KeyboardHit;
@@ -13,14 +14,21 @@ public class TreeCamera : MonoBehaviour {
         EventManager.keyboardHitEvent -= KeyboardHit;
 	}
 
+    void Start() {
+        this.treeCamera = this.GetComponent<Camera>();
+    }
+
     void Update() {
         if (this.elaspsedSeizureTime > 0) {
-            this.GetComponent<Camera>().backgroundColor = Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
+            this.treeCamera.backgroundColor = Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
             this.elaspsedSeizureTime -= Time.deltaTime;
+        } else {
+            this.treeCamera.backgroundColor = new Color(0, 0, 0, 1);
         }
     }
 
     void KeyboardHit() {
+        Debug.LogWarning("SEIZURE");
         this.elaspsedSeizureTime = this.seizureTime;
     }
 }
