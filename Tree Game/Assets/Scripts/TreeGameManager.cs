@@ -14,6 +14,7 @@ public class TreeGameManager : MonoBehaviour {
     public bool selectRootMode = true;
     public float multiplierTime;
     public float timeToShoot = 0f;
+    public bool started = false;
 
     void Awake() {
         keys = getAllKeys();
@@ -23,6 +24,7 @@ public class TreeGameManager : MonoBehaviour {
         this.enemiesKilled = 0;
         this.score = 0;
         this.scoreMultiplier = 0;
+        started = false;
         keys = getAllKeys();
     }
 
@@ -150,6 +152,13 @@ public class TreeGameManager : MonoBehaviour {
             default:
                 return getAllKeys();
         }
+    }
+
+    public void startGame()
+    {
+        started = true;
+        GameObject.FindObjectOfType<EnemySpawner>().GetComponent<EnemySpawner>().spawnAliens();
+        GameObject.FindGameObjectWithTag("Menu").SetActive(false);
     }
 
 
