@@ -105,6 +105,7 @@ public class Alien : MonoBehaviour {
         else if ("a#bc#d#ef#g#".Contains(collision.gameObject.tag))
         {
             Destroy(this.gameObject, 0f);
+            EventManager.EnemyDied();
             EventManager.KeyboardHit(this.tag);
         }
     }
