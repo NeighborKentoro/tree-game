@@ -186,6 +186,8 @@ public class TreeGameManager : MonoBehaviour {
         started = false;
         this.gameOver = true;
         GameObject.FindGameObjectWithTag("Keyboard").GetComponent<Keyboard>().activateAllKeys();
+        if (score > PlayerPrefs.GetInt("HighScore"))
+            PlayerPrefs.SetInt("HighScore", score);
     }
 
 

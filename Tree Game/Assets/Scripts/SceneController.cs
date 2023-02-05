@@ -10,6 +10,8 @@ public class SceneController : MonoBehaviour
     public GameObject rules;
     [SerializeField]
     public GameObject menu;
+    [SerializeField]
+    public GameObject highscore;
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +43,7 @@ public class SceneController : MonoBehaviour
 
     public void showMenu()
     {
+        highscore.GetComponent<TMP_Text>().text = "Highscore: " + PlayerPrefs.GetInt("HighScore").ToString();
         rules.SetActive(false);
         menu.SetActive(true);
     }
