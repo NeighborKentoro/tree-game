@@ -5,8 +5,12 @@ using UnityEngine;
 public class Keyboard : MonoBehaviour {
 
     private TreeGameManager gameManager;
+    [SerializeField]
+    public int maxHealth = 100;
+    private int currentHealth;
 
     void Start() {
+        currentHealth = maxHealth;
         gameManager = GameObject.FindObjectOfType<TreeGameManager>().GetComponent<TreeGameManager>();
         deactivateAllKeys();
     }
@@ -62,6 +66,11 @@ public class Keyboard : MonoBehaviour {
 
     void KeyboardHit()
     {
-        
+        currentHealth--;
+        Debug.Log(currentHealth);
+        if (currentHealth < 0)
+        {
+            gameManager.youSuck();
+        }
     }
 }

@@ -22,6 +22,7 @@ TagManager:
   - AlienProjectile
   - KeyColor
   - Menu
+  - EndGame
   layers:
   - Default
   - TransparentFX

@@ -50,4 +50,4 @@ MonoBehaviour:
   xSpawnOffset: -120
   ySpawnOffset: -5
   enemiesPerRow: 21
-  enemiesPerColumn: 3
+  enemiesPerColumn: 7
