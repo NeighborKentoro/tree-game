@@ -64,10 +64,18 @@ public class Keyboard : MonoBehaviour {
         }
     }
 
-    void KeyboardHit()
+    void KeyboardHit(string hitBy)
     {
-        currentHealth--;
-        Debug.Log(currentHealth);
+        if (hitBy == "Alien")
+        {
+            currentHealth -= 2;
+        }
+        else
+        {
+            currentHealth--;
+        }
+        
+        Debug.Log("Hit by " + hitBy + " " + currentHealth);
         if (currentHealth < 0)
         {
             gameManager.youSuck();

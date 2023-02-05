@@ -13,7 +13,7 @@ public class EventManager {
     public delegate void BeatAction(int beatNumber);
     public static event BeatAction beatEvent;
 
-    public delegate void KeyboardHitAction();
+    public delegate void KeyboardHitAction(string hitBy);
     public static event KeyboardHitAction keyboardHitEvent;
 
     public delegate void PitchAction(string root);
@@ -51,9 +51,9 @@ public class EventManager {
         }
     }
 
-    public static void KeyboardHit() {
+    public static void KeyboardHit(string hitBy) {
         if (keyboardHitEvent != null) {
-            keyboardHitEvent();
+            keyboardHitEvent(hitBy);
         }
     }
 

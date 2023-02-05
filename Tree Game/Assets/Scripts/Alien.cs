@@ -91,14 +91,21 @@ public class Alien : MonoBehaviour {
         if (isColliding) 
             return;
         isColliding = true;
+
         if (collision.gameObject.tag == "Projectile")
         {
             Destroy(this.gameObject, 0f);
             EventManager.EnemyDied();
             
         }
-
-        if (collision.gameObject.tag == "AlienProjectile")
+        else if (collision.gameObject.tag == "AlienProjectile")
+        {
             Physics2D.IgnoreCollision(collision.gameObject.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+        }
+        else if ("a#bc#d#ef#g#".Contains(collision.gameObject.tag))
+        {
+            Destroy(this.gameObject, 0f);
+            EventManager.KeyboardHit(this.tag);
+        }
     }
 }
