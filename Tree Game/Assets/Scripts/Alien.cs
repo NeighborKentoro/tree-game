@@ -18,6 +18,7 @@ public class Alien : MonoBehaviour {
     private float shootCooldown = 5f;
     private int chanceModifier = 0;
     private bool isColliding;
+    private ParticleSystem particles;
 
     void OnEnable() {
         EventManager.enemyDiedEvent += EnemyDied;
@@ -34,6 +35,7 @@ public class Alien : MonoBehaviour {
         this.xDirection = 1;
         this.xStart = this.transform.position.x;
         this.chanceModifier = 0;
+        this.particles = this.GetComponent<ParticleSystem>();
     }
 
     // Update is called once per frame
@@ -79,6 +81,7 @@ public class Alien : MonoBehaviour {
         int chanceToFire = Random.Range(0, 100);
         if ( (this.row % 4 == (beat - 1) || this.column % 4 == (beat - 1)) && chanceToFire >= (98 - this.chanceModifier) ) {
             GameObject.Instantiate(projectile, this.transform.position, this.transform.rotation);
+            this.particles.Play();
         }
     }
 

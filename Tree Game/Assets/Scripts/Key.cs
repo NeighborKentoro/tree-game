@@ -1,4 +1,5 @@
 using UnityEngine;
+using static UnityEngine.ParticleSystem;
 
 public class Key : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class Key : MonoBehaviour
     private Keyboard keyboard;
     private TreeGameManager gameManager;
     private Color color;
+    private ParticleSystem particles;
 
     void OnEnable() {
         EventManager.beatEvent += FireProjectile;
@@ -25,6 +27,7 @@ public class Key : MonoBehaviour
         gameManager = GameObject.FindObjectOfType<TreeGameManager>().GetComponent<TreeGameManager>();
         keyboard = GameObject.FindGameObjectWithTag("Keyboard").GetComponent<Keyboard>();
         color = Color.blue;
+        particles = this.GetComponentInChildren<ParticleSystem>();
     }
 
     // Update is called once per frame
@@ -55,6 +58,9 @@ public class Key : MonoBehaviour
             projectile.GetComponent<SpriteRenderer>().color = color;
             projectile.GetComponentInChildren<TrailRenderer>().startColor = color;
             Instantiate(projectile, shootPoint.transform.position, shootPoint.transform.rotation);
+            MainModule psMain = particles.main;
+            psMain.startColor = color;
+            particles.Play();
         }
     }
 
