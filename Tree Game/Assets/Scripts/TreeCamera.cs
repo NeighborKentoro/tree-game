@@ -7,11 +7,11 @@ public class TreeCamera : MonoBehaviour {
     private Camera treeCamera;
 
     void OnEnable() {
-        EventManager.keyboardHitEvent += KeyboardHit;
+        // EventManager.keyboardHitEvent += KeyboardHit;
 	}
 
 	void OnDisable() {
-        EventManager.keyboardHitEvent -= KeyboardHit;
+        // EventManager.keyboardHitEvent -= KeyboardHit;
 	}
 
     void Start() {
@@ -28,7 +28,6 @@ public class TreeCamera : MonoBehaviour {
     }
 
     void KeyboardHit() {
-        Debug.LogWarning("SEIZURE");
         this.elaspsedSeizureTime = this.seizureTime;
     }
 }

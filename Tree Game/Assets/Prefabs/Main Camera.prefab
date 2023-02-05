@@ -97,4 +97,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6498ade061394f469436a1e5366a4ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seizureTime: 1
+  seizureTime: 0.5

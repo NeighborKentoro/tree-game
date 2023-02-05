@@ -16,6 +16,9 @@ public class EventManager {
     public delegate void KeyboardHitAction();
     public static event KeyboardHitAction keyboardHitEvent;
 
+    public delegate void PitchAction(string root);
+    public static event PitchAction pitchEvent;
+
     public static void EnemyDied() {
         if (enemyDiedEvent != null) {
 		    enemyDiedEvent();
@@ -51,6 +54,12 @@ public class EventManager {
     public static void KeyboardHit() {
         if (keyboardHitEvent != null) {
             keyboardHitEvent();
+        }
+    }
+
+    public static void Pitch(string root) {
+        if (pitchEvent != null) {
+            pitchEvent(root);
         }
     }
 }

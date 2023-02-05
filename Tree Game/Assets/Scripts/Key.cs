@@ -90,6 +90,7 @@ public class Key : MonoBehaviour
 
     private void updateRoot(string tag)
     {
+        EventManager.Pitch(tag);
         keyboard.setRoot(tag);
     }
 

@@ -38,13 +38,19 @@ public class AudioManager : MonoBehaviour {
 
     void OnEnable() {
         EventManager.enemyDiedEvent += IncreaseTempo;
+        EventManager.pitchEvent += Pitch;
 	}
 
 	void OnDisable() {
         EventManager.enemyDiedEvent -= IncreaseTempo;
+        EventManager.pitchEvent -= Pitch;
 	}
 
     void IncreaseTempo() {
         this.secondsPerBeat = 60f / this.tempo;
+    }
+
+    void Pitch(string root) {
+        Debug.Log("Son of a Pitch");
     }
 }
