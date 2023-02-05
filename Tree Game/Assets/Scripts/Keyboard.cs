@@ -71,7 +71,7 @@ public class Keyboard : MonoBehaviour {
     {
         if (hitBy == "Alien")
         {
-            currentHealth -= 2;
+            currentHealth -= 3;
         }
         else
         {
