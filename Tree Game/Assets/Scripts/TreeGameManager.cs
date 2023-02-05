@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class TreeGameManager : MonoBehaviour {
 
@@ -169,7 +170,7 @@ public class TreeGameManager : MonoBehaviour {
     // lose
     public void youSuck()
     {
-        GameObject.FindGameObjectWithTag("EndGame").gameObject.SetActive(true);
+        GameObject.FindGameObjectWithTag("EndGame").GetComponent<TMP_Text>().text = "Womp womp. Game over.";
         started = false;
     }
 
