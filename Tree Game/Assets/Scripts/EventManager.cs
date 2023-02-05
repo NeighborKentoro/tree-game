@@ -10,6 +10,12 @@ public class EventManager {
     public delegate void EnemyShootAction(int row, int column);
     public static event EnemyShootAction enemyShootEvent;
 
+    public delegate void BeatAction(int beatNumber);
+    public static event BeatAction beatEvent;
+
+    public delegate void KeyboardHitAction();
+    public static event KeyboardHitAction keyboardHitEvent;
+
     public static void EnemyDied() {
         if (enemyDiedEvent != null) {
 		    enemyDiedEvent();
@@ -36,4 +42,15 @@ public class EventManager {
         }
     }
 
+    public static void Beat(int beatNumber) {
+        if (beatEvent != null) {
+            beatEvent(beatNumber);
+        }
+    }
+
+    public static void KeyboardHit() {
+        if (keyboardHitEvent != null) {
+            keyboardHitEvent();
+        }
+    }
 }

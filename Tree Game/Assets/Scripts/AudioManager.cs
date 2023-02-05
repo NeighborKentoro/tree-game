@@ -2,12 +2,13 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour {
 
-    public int tempo;
     public AudioSource songAudioSource;
     public AudioSource drumAudioSource;
     public AudioClip[] drumLoops;
 
     private int drumLoopIndex;
+    private int tempo;
+    private int beat;
     private float secondsPerBeat;
     private float timeElapsed;
 
@@ -17,7 +18,7 @@ public class AudioManager : MonoBehaviour {
         // this.songAudioSource.pitch = 1f;
         // this.songAudioSource.Play();
         // this.drumAudioSource.Play();
-        this.tempo = 80;
+        this.tempo = 70;
         this.secondsPerBeat = 60f / this.tempo;
         this.timeElapsed = 0f;
     }
@@ -26,6 +27,12 @@ public class AudioManager : MonoBehaviour {
         this.timeElapsed += Time.deltaTime;
         if (this.timeElapsed >= this.secondsPerBeat) {
             this.timeElapsed = 0f;
+            if (this.beat == 4) {
+                this.beat = 1;
+            } else {
+                this.beat++;
+            }
+            EventManager.Beat(this.beat);
         }
     }
 
@@ -38,7 +45,6 @@ public class AudioManager : MonoBehaviour {
 	}
 
     void IncreaseTempo() {
-        this.tempo += 10;
         this.secondsPerBeat = 60f / this.tempo;
     }
 }

@@ -100,8 +100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementFramesInterval: 360
-  xLeftBounds: -46
-  xRightBounds: 46
+  xLeftBounds: -45
+  xRightBounds: 45
   deadEnemiesFrameDrop: 20
   maxStepSpeed: 10
   projectile: {fileID: 4490271296222550685, guid: d8c46274fa367c74e8b29c79a76bc792, type: 3}

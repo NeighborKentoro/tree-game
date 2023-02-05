@@ -8,6 +8,7 @@ public class TreeGameManager : MonoBehaviour {
     private int score;
     private int scoreMultiplier;
     private float timeElapsed = 0f;
+    private float multiplierTimeElapsed = 0f;
     private string root = "all";
     private GameObject[] keys;
     public bool selectRootMode = true;
@@ -26,8 +27,9 @@ public class TreeGameManager : MonoBehaviour {
     }
 
     void Update() {
+        this.multiplierTimeElapsed += Time.deltaTime;
         this.timeElapsed += Time.deltaTime;
-        if (this.timeElapsed >= this.multiplierTime && this.scoreMultiplier > 1) {
+        if (this.multiplierTimeElapsed >= this.multiplierTime && this.scoreMultiplier > 1) {
             this.scoreMultiplier = 1;
             EventManager.ScoreMultiplier(this.scoreMultiplier);
         }
@@ -51,7 +53,7 @@ public class TreeGameManager : MonoBehaviour {
         this.enemiesKilled++;
         this.scoreMultiplier++;
         this.score += 100 * this.scoreMultiplier;
-        this.timeElapsed = 0f;
+        this.multiplierTimeElapsed = 0f;
         EventManager.Score(this.score);
         EventManager.ScoreMultiplier(this.scoreMultiplier);
     }

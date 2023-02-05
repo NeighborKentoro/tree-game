@@ -1,18 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class TreeCamera : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+public class TreeCamera : MonoBehaviour {
+
+    public float seizureTime;
+    private float elaspsedSeizureTime;
+
+    void OnEnable() {
+        EventManager.keyboardHitEvent += KeyboardHit;
+	}
+
+	void OnDisable() {
+        EventManager.keyboardHitEvent -= KeyboardHit;
+	}
+
+    void Update() {
+        if (this.elaspsedSeizureTime > 0) {
+            this.GetComponent<Camera>().backgroundColor = Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
+            this.elaspsedSeizureTime -= Time.deltaTime;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        //this.GetComponent<Camera>().backgroundColor = Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
+    void KeyboardHit() {
+        this.elaspsedSeizureTime = this.seizureTime;
     }
 }

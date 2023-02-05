@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Key : MonoBehaviour
@@ -11,6 +9,14 @@ public class Key : MonoBehaviour
     private bool activated = true;
     private Keyboard keyboard;
     private TreeGameManager gameManager;
+
+    void OnEnable() {
+        EventManager.beatEvent += FireProjectile;
+	}
+
+	void OnDisable() {
+        EventManager.beatEvent -= FireProjectile;
+	}
 
     // Start is called before the first frame update
     void Start()
@@ -37,13 +43,17 @@ public class Key : MonoBehaviour
                         Debug.Log("SELECTING ROOT");
                         updateRoot(hit.collider.gameObject.tag);
                     }
-                    // spawn projectile
-                    Instantiate(projectile, hit.collider.GetComponent<Key>().shootPoint.transform);
                 }
 
             }
         
         
+    }
+
+    private void FireProjectile(int beat) {
+        if (this.activated) {
+            Instantiate(projectile, shootPoint.transform);
+        }
     }
 
     public void deactivate()

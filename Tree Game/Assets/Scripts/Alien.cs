@@ -1,5 +1,4 @@
 using UnityEngine;
-using System.Collections;
 
 public class Alien : MonoBehaviour {
 
@@ -17,29 +16,30 @@ public class Alien : MonoBehaviour {
     [SerializeField]
     public GameObject projectile;
     private float shootCooldown = 5f;
-
+    private int chanceModifier = 0;
 
     void OnEnable() {
         EventManager.enemyDiedEvent += EnemyDied;
-        EventManager.enemyShootEvent += EnemyShoot;
+        EventManager.beatEvent += FireProjectile;
 	}
 
 	void OnDisable() {
         EventManager.enemyDiedEvent -= EnemyDied;
-        EventManager.enemyShootEvent -= EnemyShoot;
+        EventManager.beatEvent -= FireProjectile;
 	}
 
     void Start() {
         this.frameCount = 1;
         this.xDirection = 1;
         this.xStart = this.transform.position.x;
+        this.chanceModifier = 0;
     }
 
     // Update is called once per frame
     void Update() {
         if (this.frameCount >= (this.movementFramesInterval)) {
             float yStep = 0f;
-            float xStep = 1f * this.xDirection;
+            float xStep = 2f * this.xDirection;
             
             //only move if so many frames have passed
             if ( (this.transform.position.x + xStep) >= (this.xStart + this.xRightBounds)) {
@@ -65,6 +65,7 @@ public class Alien : MonoBehaviour {
     }
 
     private void EnemyDied() {
+        this.chanceModifier++;
         if (this.movementFramesInterval - this.deadEnemiesFrameDrop < this.maxStepSpeed) {
             this.movementFramesInterval = this.maxStepSpeed;
         } else {
@@ -72,14 +73,11 @@ public class Alien : MonoBehaviour {
         }
     }
 
-    private void EnemyShoot(int row, int column)
-    {
-        if (this.row == row && this.column == column)
-        {
-            Debug.Log("enemy shot");
-            Instantiate(projectile);
+    private void FireProjectile(int beat) {
+        int chanceToFire = Random.Range(0, 100);
+        if ( (this.row % 4 == (beat - 1) || this.column % 4 == (beat - 1)) && chanceToFire >= (98 - this.chanceModifier) ) {
+            GameObject.Instantiate(projectile, this.transform.position, this.transform.rotation);
         }
-        
     }
 
     void OnCollisionEnter2D(Collision2D collision) {
