@@ -38,11 +38,9 @@ public class Key : MonoBehaviour
 
                 if (hit.collider != null /*&& hit.collider.GetComponent<Key>().activated*/)
                 {
-                    Debug.Log("Clicked: " + hit.collider.gameObject.tag);
                     // if in select root mode, this key will be set as root
                     if (gameManager.selectRootMode)
                     {
-                        Debug.Log("SELECTING ROOT");
                         updateRoot(hit.collider.gameObject.tag);
                     }
                 }
@@ -92,7 +90,6 @@ public class Key : MonoBehaviour
 
     private void updateRoot(string tag)
     {
-        Debug.Log("Setting root to " + tag);
         keyboard.setRoot(tag);
     }
 

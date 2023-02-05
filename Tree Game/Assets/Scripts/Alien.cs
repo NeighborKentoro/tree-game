@@ -44,11 +44,11 @@ public class Alien : MonoBehaviour {
             //only move if so many frames have passed
             if ( (this.transform.position.x + xStep) >= (this.xStart + this.xRightBounds)) {
                 this.xDirection = -1;
-                yStep = -1f;
+                yStep = -2f;
                 xStep = 0f;
             } else if ( (this.transform.position.x + xStep)  <= (this.xStart + this.xLeftBounds)) {
                 this.xDirection = 1;
-                yStep = -1f;
+                yStep = -2f;
                 xStep = 0f;
             }
             

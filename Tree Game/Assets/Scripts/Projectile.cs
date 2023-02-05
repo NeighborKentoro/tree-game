@@ -24,7 +24,6 @@ public class Projectile : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.tag.Equals("Alien")) {
-            Debug.LogWarning("HIT");
             this.GetComponent<BoxCollider2D>().enabled = false;
             Destroy(this.gameObject, 0f);
         }
