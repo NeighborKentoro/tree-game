@@ -51,6 +51,37 @@ public class AudioManager : MonoBehaviour {
     }
 
     void Pitch(string root) {
+        switch (root)
+        {
+            case "a":
+                
+                break;
+            case "a#":
+                break;
+            case "b":
+                break;
+            case "c":
+                break;
+            case "c#":
+                break;
+            case "d":
+                break;
+            case "d#":
+                break;
+            case "e":
+                break;
+            case "f":
+                break;
+            case "f#":
+                break;
+            case "g":
+                break;
+            case "g#":
+                break;
+            default:
+                break;
+        }
         Debug.Log("Son of a Pitch");
     }
+
 }
