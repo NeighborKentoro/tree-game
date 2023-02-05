@@ -12,6 +12,8 @@ public class Key : MonoBehaviour
     private TreeGameManager gameManager;
     private Color color;
     private ParticleSystem particles;
+    [SerializeField]
+    public string mainScene = "Game Scene";
 
     void OnEnable() {
         EventManager.beatEvent += FireProjectile;
@@ -48,7 +50,7 @@ public class Key : MonoBehaviour
                     }
                     if (gameManager.gameOver)
                     {
-                        GameObject.FindObjectOfType<SceneController>().loadScene("Nick Scene 2");
+                        GameObject.FindObjectOfType<SceneController>().loadScene(mainScene);
                     }
                 }
 

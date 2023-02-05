@@ -188,51 +188,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 392b607a4eda29246a1be7d05478776f, type: 3}
---- !u!1 &600458886
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 600458888}
-  - component: {fileID: 600458887}
-  m_Layer: 0
-  m_Name: SceneController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &600458887
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 600458886}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40b4fa42b528c234a896cf51990cded9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startScene: Menu
---- !u!4 &600458888
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 600458886}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 180.33264, y: 148.95354, z: 0.8218758}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &607788372
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -683,3 +638,60 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1635203506b88ee449a759166c6b6297, type: 3}
+--- !u!1001 &8124520836825878730
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8124520837384394306, guid: c9df57f0b5fdc72479367ed8910fb2a7, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8124520837384394306, guid: c9df57f0b5fdc72479367ed8910fb2a7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 180.33264
+      objectReference: {fileID: 0}
+    - target: {fileID: 8124520837384394306, guid: c9df57f0b5fdc72479367ed8910fb2a7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 148.95354
+      objectReference: {fileID: 0}
+    - target: {fileID: 8124520837384394306, guid: c9df57f0b5fdc72479367ed8910fb2a7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.8218758
+      objectReference: {fileID: 0}
+    - target: {fileID: 8124520837384394306, guid: c9df57f0b5fdc72479367ed8910fb2a7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8124520837384394306, guid: c9df57f0b5fdc72479367ed8910fb2a7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8124520837384394306, guid: c9df57f0b5fdc72479367ed8910fb2a7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8124520837384394306, guid: c9df57f0b5fdc72479367ed8910fb2a7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8124520837384394306, guid: c9df57f0b5fdc72479367ed8910fb2a7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8124520837384394306, guid: c9df57f0b5fdc72479367ed8910fb2a7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8124520837384394306, guid: c9df57f0b5fdc72479367ed8910fb2a7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8124520837384394316, guid: c9df57f0b5fdc72479367ed8910fb2a7, type: 3}
+      propertyPath: m_Name
+      value: SceneController
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c9df57f0b5fdc72479367ed8910fb2a7, type: 3}
