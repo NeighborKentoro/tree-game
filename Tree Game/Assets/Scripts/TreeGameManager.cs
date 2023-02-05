@@ -51,10 +51,12 @@ public class TreeGameManager : MonoBehaviour {
 
     void OnEnable() {
         EventManager.enemyDiedEvent += EnemyDied;
+        EventManager.keyboardHitEvent += KeyboardHit;
 	}
 
 	void OnDisable() {
         EventManager.enemyDiedEvent -= EnemyDied;
+        EventManager.keyboardHitEvent -= KeyboardHit;
 	}
 
     private void EnemyDied() {
@@ -68,6 +70,10 @@ public class TreeGameManager : MonoBehaviour {
         {
             youDaMan();
         }
+    }
+    
+    private void KeyboardHit(string tag) {
+        this.scoreMultiplier = 0;
     }
 
     private GameObject[] getAllKeys()
