@@ -80,9 +80,6 @@ public class Keyboard : MonoBehaviour {
 
         healthField.GetComponent<TMP_Text>().text = currentHealth.ToString();
 
-
-
-        Debug.Log("Hit by " + hitBy + " " + currentHealth);
         if (currentHealth < 0)
         {
             gameManager.youSuck();

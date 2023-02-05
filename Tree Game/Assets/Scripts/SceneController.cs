@@ -8,6 +8,8 @@ public class SceneController : MonoBehaviour
     public string startScene = "Menu";
     [SerializeField]
     public GameObject rules;
+    [SerializeField]
+    public GameObject menu;
 
     // Start is called before the first frame update
     void Start()
@@ -28,24 +30,24 @@ public class SceneController : MonoBehaviour
     public void quitGame()
     {
         Application.Quit();
-        UnityEditor.EditorApplication.isPlaying = false;
+        //UnityEditor.EditorApplication.isPlaying = false;
     }
 
     public void showRules()
     {
-        GameObject.FindGameObjectWithTag("Menu").SetActive(false);
+        menu.SetActive(false);
         rules.SetActive(true);
     }
 
     public void showMenu()
     {
         rules.SetActive(false);
-        GameObject.FindGameObjectWithTag("Menu").SetActive(true);
+        menu.SetActive(true);
     }
 
     public void hideMenuAndRules()
     {
-        GameObject.FindGameObjectWithTag("Menu").SetActive(false);
+        menu.SetActive(false);
         rules.SetActive(false);
     }
 }
