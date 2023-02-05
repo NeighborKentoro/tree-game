@@ -8,7 +8,7 @@ public class Keyboard : MonoBehaviour {
 
     void Start() {
         gameManager = GameObject.FindObjectOfType<TreeGameManager>().GetComponent<TreeGameManager>();
-        activateAllKeys();
+        //activateAllKeys();
     }
 
     void Update() {

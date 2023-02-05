@@ -49,25 +49,29 @@ public class Key : MonoBehaviour
     public void deactivate()
     {
         activated = false;
-        if (GetComponent<SpriteRenderer>() != null)
-            GetComponent<SpriteRenderer>().color = Color.clear;
         foreach (Transform c in transform.GetComponentsInChildren<Transform>())
         {
             if (c.GetComponent<SpriteRenderer>() != null)
+            {
+                c.GetComponent<SpriteRenderer>().enabled = false;
                 c.GetComponent<SpriteRenderer>().color = Color.clear;
+            }
+                
         }
     }
 
     public void activate()
     {
         activated = true;
-        if (GetComponent<SpriteRenderer>() != null)
-            GetComponent<SpriteRenderer>().color = Color.blue;
         // get children
         foreach (Transform c in transform.GetComponentsInChildren<Transform>())
         {
             if (c.GetComponent<SpriteRenderer>() != null)
+            {
+                c.GetComponent<SpriteRenderer>().enabled = true;
                 c.GetComponent<SpriteRenderer>().color = Color.blue;
+            }
+                
         }
     }
 
