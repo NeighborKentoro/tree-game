@@ -78,11 +78,13 @@ public class Keyboard : MonoBehaviour {
             currentHealth--;
         }
 
-        healthField.GetComponent<TMP_Text>().text = currentHealth.ToString();
+        
 
         if (currentHealth < 0)
         {
             gameManager.youSuck();
         }
+
+        healthField.GetComponent<TMP_Text>().text = currentHealth >= 0 ? currentHealth.ToString() : "0";
     }
 }
