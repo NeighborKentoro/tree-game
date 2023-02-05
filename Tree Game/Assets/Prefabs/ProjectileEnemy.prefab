@@ -153,6 +153,7 @@ GameObject:
   - component: {fileID: -7968473690325274294}
   - component: {fileID: -633081223649650954}
   - component: {fileID: 343878308579666884}
+  - component: {fileID: 4318697060200727023}
   m_Layer: 0
   m_Name: ProjectileEnemy
   m_TagString: AlienProjectile
@@ -289,3 +290,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 14
   timeToDie: 15
+--- !u!95 &4318697060200727023
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4490271296222550685}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 16051b5969e8a324fb670a002ab2d002, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
