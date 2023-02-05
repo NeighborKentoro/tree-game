@@ -79,7 +79,8 @@ public class Alien : MonoBehaviour {
 
     private void FireProjectile(int beat) {
         int chanceToFire = Random.Range(0, 100);
-        if ( (this.row % 4 == (beat - 1) || this.column % 4 == (beat - 1)) && chanceToFire >= (98 - this.chanceModifier) ) {
+        int chancePercent = this.chanceModifier >= 130 ? 25 : 0;
+        if ( (this.row % 4 == (beat - 1) || this.column % 4 == (beat - 1)) && chanceToFire >= (98 - chancePercent) ) {
             GameObject.Instantiate(projectile, this.transform.position, this.transform.rotation);
             this.particles.Play();
         }
