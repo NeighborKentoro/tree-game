@@ -36,12 +36,16 @@ public class Key : MonoBehaviour
                 RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
 
 
-                if (hit.collider != null /*&& hit.collider.GetComponent<Key>().activated*/)
+                if (hit.collider != null)
                 {
                     // if in select root mode, this key will be set as root
                     if (gameManager.selectRootMode)
                     {
                         updateRoot(hit.collider.gameObject.tag);
+                    }
+                    if (gameManager.gameOver)
+                    {
+                        GameObject.FindObjectOfType<SceneController>().loadScene("Nick Scene 2");
                     }
                 }
 

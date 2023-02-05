@@ -12,6 +12,8 @@ public class EnemySpawner : MonoBehaviour {
 
     public void spawnAliens()
     {
+        // set max number of aliens
+        GameObject.FindAnyObjectByType<TreeGameManager>().maxAliens = enemiesPerRow * enemiesPerColumn;
         for (int iRow = 0; iRow < enemiesPerRow; iRow++)
         {
             Vector3 rowPosition = new Vector3((this.transform.position.x + (xSpawnSpacing * iRow)) + xSpawnOffset, this.transform.position.y, 0);
