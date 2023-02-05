@@ -21,6 +21,7 @@ public class TreeGameManager : MonoBehaviour {
 
     void Awake() {
         keys = getAllKeys();
+        GameObject.FindAnyObjectByType<SceneController>().showMenu();
     }
 
     void Start() {
@@ -168,8 +169,12 @@ public class TreeGameManager : MonoBehaviour {
         if (!gameOver)
         {
             started = true;
+            GameObject.FindObjectOfType<SceneController>().hideMenuAndRules();
+            
             GameObject.FindObjectOfType<EnemySpawner>().GetComponent<EnemySpawner>().spawnAliens();
-            GameObject.FindGameObjectWithTag("Menu").SetActive(false);
+
+            GameObject.Find("Heart").SetActive(true);
+
         }
         
     }

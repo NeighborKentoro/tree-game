@@ -23,6 +23,8 @@ TagManager:
   - KeyColor
   - Menu
   - EndGame
+  - Rules
+  - Health
   layers:
   - Default
   - TransparentFX
