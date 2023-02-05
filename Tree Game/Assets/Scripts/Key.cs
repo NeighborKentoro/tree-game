@@ -9,6 +9,7 @@ public class Key : MonoBehaviour
     private bool activated = true;
     private Keyboard keyboard;
     private TreeGameManager gameManager;
+    private Color color;
 
     void OnEnable() {
         EventManager.beatEvent += FireProjectile;
@@ -23,6 +24,7 @@ public class Key : MonoBehaviour
     {
         gameManager = GameObject.FindObjectOfType<TreeGameManager>().GetComponent<TreeGameManager>();
         keyboard = GameObject.FindGameObjectWithTag("Keyboard").GetComponent<Keyboard>();
+        color = Color.blue;
     }
 
     // Update is called once per frame
@@ -50,6 +52,7 @@ public class Key : MonoBehaviour
 
     private void FireProjectile(int beat) {
         if (this.activated) {
+            projectile.GetComponent<SpriteRenderer>().color = color;
             Instantiate(projectile, shootPoint.transform);
         }
     }
@@ -70,6 +73,8 @@ public class Key : MonoBehaviour
 
     public void activate()
     {
+        Color bonkersColor = Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
+        color = bonkersColor;
         activated = true;
         // get children
         foreach (Transform c in transform.GetComponentsInChildren<Transform>())
@@ -77,7 +82,7 @@ public class Key : MonoBehaviour
             if (c.GetComponent<SpriteRenderer>() != null)
             {
                 c.GetComponent<SpriteRenderer>().enabled = true;
-                c.GetComponent<SpriteRenderer>().color = Color.blue;
+                c.GetComponent<SpriteRenderer>().color = bonkersColor;
             }
                 
         }
