@@ -45,5 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectRootMode: 1
-  multiplierTime: 8
+  multiplierTime: 2
   timeToShoot: 15
+  started: 0
+  gameOver: 0
+  maxAliens: 0
