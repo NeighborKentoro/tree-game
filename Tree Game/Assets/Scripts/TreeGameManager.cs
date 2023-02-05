@@ -22,7 +22,7 @@ public class TreeGameManager : MonoBehaviour {
     void Start() {
         this.enemiesKilled = 0;
         this.score = 0;
-        this.scoreMultiplier = 1;
+        this.scoreMultiplier = 0;
         keys = getAllKeys();
     }
 
@@ -52,7 +52,7 @@ public class TreeGameManager : MonoBehaviour {
     private void EnemyDied() {
         this.enemiesKilled++;
         this.scoreMultiplier++;
-        this.score += 100 * this.scoreMultiplier;
+        this.score += 100 * (this.scoreMultiplier == 0 ? 1 : this.scoreMultiplier);
         this.multiplierTimeElapsed = 0f;
         EventManager.Score(this.score);
         EventManager.ScoreMultiplier(this.scoreMultiplier);
