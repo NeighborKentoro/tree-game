@@ -53,7 +53,7 @@ public class Key : MonoBehaviour
     private void FireProjectile(int beat) {
         if (this.activated) {
             projectile.GetComponent<SpriteRenderer>().color = color;
-            Instantiate(projectile, shootPoint.transform);
+            Instantiate(projectile, shootPoint.transform.position, shootPoint.transform.rotation);
         }
     }
 
