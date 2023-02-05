@@ -26,5 +26,10 @@ public class Projectile : MonoBehaviour
         if (collision.gameObject.tag != "Projectile") {
             Destroy(this.gameObject, 0f);
         }
+        if (collision.gameObject.tag == "AlienProjectile")
+        {
+            Destroy(this.gameObject, 0f);
+            Destroy(collision.gameObject, 0f);
+        }
     } 
 }

@@ -28,7 +28,7 @@ public class Key : MonoBehaviour
                 RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
 
 
-                if (hit.collider != null && hit.collider.GetComponent<Key>().activated)
+                if (hit.collider != null /*&& hit.collider.GetComponent<Key>().activated*/)
                 {
                     Debug.Log("Clicked: " + hit.collider.gameObject.tag);
                     // if in select root mode, this key will be set as root

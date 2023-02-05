@@ -33,7 +33,7 @@ public class Keyboard : MonoBehaviour {
 
         }
 
-        gameManager.selectRootMode = false;
+        //gameManager.selectRootMode = false;
     }
 
     private void deactivateAllKeys()

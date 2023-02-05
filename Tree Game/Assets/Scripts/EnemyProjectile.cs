@@ -28,7 +28,16 @@ public class EnemyProjectile : MonoBehaviour
         {
             Destroy(this.gameObject, 0f);
         }
+        if (collision.gameObject.tag == "Projectile")
+        {
+            Debug.Log("Destroy proj");
+            Destroy(this.gameObject, 0f);
+            Destroy(collision.gameObject, 0f);
+        }
         if (collision.gameObject.tag == "Alien")
+        {
             Physics2D.IgnoreCollision(collision.gameObject.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+        }
+            
     }
 }
