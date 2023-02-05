@@ -34,7 +34,7 @@ public class Key : MonoBehaviour
                 RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
 
 
-                if (hit.collider != null && hit.collider.GetComponent<Key>().activated)
+                if (hit.collider != null /*&& hit.collider.GetComponent<Key>().activated*/)
                 {
                     Debug.Log("Clicked: " + hit.collider.gameObject.tag);
                     // if in select root mode, this key will be set as root
@@ -59,25 +59,29 @@ public class Key : MonoBehaviour
     public void deactivate()
     {
         activated = false;
-        if (GetComponent<SpriteRenderer>() != null)
-            GetComponent<SpriteRenderer>().color = Color.clear;
         foreach (Transform c in transform.GetComponentsInChildren<Transform>())
         {
             if (c.GetComponent<SpriteRenderer>() != null)
+            {
+                c.GetComponent<SpriteRenderer>().enabled = false;
                 c.GetComponent<SpriteRenderer>().color = Color.clear;
+            }
+                
         }
     }
 
     public void activate()
     {
         activated = true;
-        if (GetComponent<SpriteRenderer>() != null)
-            GetComponent<SpriteRenderer>().color = Color.blue;
         // get children
         foreach (Transform c in transform.GetComponentsInChildren<Transform>())
         {
             if (c.GetComponent<SpriteRenderer>() != null)
+            {
+                c.GetComponent<SpriteRenderer>().enabled = true;
                 c.GetComponent<SpriteRenderer>().color = Color.blue;
+            }
+                
         }
     }
 

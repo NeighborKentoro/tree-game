@@ -20,6 +20,7 @@ TagManager:
   - Keyboard
   - Alien
   - AlienProjectile
+  - KeyColor
   layers:
   - Default
   - TransparentFX

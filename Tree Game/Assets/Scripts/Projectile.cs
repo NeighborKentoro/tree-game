@@ -28,5 +28,10 @@ public class Projectile : MonoBehaviour
             this.GetComponent<BoxCollider2D>().enabled = false;
             Destroy(this.gameObject, 0f);
         }
+        if (collision.gameObject.tag == "AlienProjectile")
+        {
+            Destroy(this.gameObject, 0f);
+            Destroy(collision.gameObject, 0f);
+        }
     } 
 }
